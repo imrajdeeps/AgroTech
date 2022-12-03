@@ -47,7 +47,7 @@ exports.showItem = (req, res) => {
         })
 }
 
-// gvfcfc
+// single Show
 exports.showSingleItem = (req, res) =>{
     let itemObj = new item();
     const itemId = req.params.itemId; 

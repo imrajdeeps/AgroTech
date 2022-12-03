@@ -37,10 +37,6 @@ router.get("/", function (req, res) {
     })
 })
 
-// routes
-router.post("/addItem", userController.addItem)
-// shows all items
-router.get("/showItem", userController.showItem)
 // shows single item
 router.get("/showSingleItem/:itemId", userController.showSingleItem);
 
