@@ -95,14 +95,6 @@ exports.updateItem = (req, res) =>{
             })
         }
     })
-    // .then(err=>{
-    //     res.json({
-    //         message:"Update failed",
-    //         status:400,
-    //         success:false,
-    //         data:err
-    //     }); 
-    // });
 }
 
 
