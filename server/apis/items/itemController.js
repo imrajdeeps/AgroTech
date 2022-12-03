@@ -1,11 +1,13 @@
 const item = require("./itemModel");
 
-exports.addItem = (req, res) => {
+exports.addItem = async (req, res) => {
     let itemObj = new item();
-    itemObj.itemName = req.body.itemName
-    itemObj.itemDesc = req.body.itemDesc
-    itemObj.itemPrice = req.body.itemPrice
-    
+    itemObj.itemId = await item.countDocuments().exec();
+    itemObj.itemName = req.body?.itemName ?? ""
+    itemObj.itemDesc = req.body?.itemDesc ?? ""
+    itemObj.itemPrice = req.body?.itemPrice ?? ""
+    itemObj.itemImage = req.file?.filename ?? ""
+
     itemObj.save()
         .then(data => {
             res.json({
